@@ -24,7 +24,8 @@ body {
 /* Main App Layout */
 .app {
   width: 100%;
-  padding: 0;
+  max-width: 1200px; /* Add max-width for larger screens */
+  padding: 0 15px; /* Add horizontal padding */
   height: 100%;
   margin: 0 auto;
   backdrop-filter: blur(5px); /* Blurring the background */
@@ -35,10 +36,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 14px;
+  padding: 15px 20px;
   margin: 0 0 20px 0;
   background: #F5F5DC;
   transition: all 0.3s ease;
+  position: sticky; /* Make navbar sticky */
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar-brand h2{
@@ -78,19 +82,20 @@ body {
 /* Responsive Navbar for mobile devices */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    padding: 10px 15px;
+  }
+
+  .navbar-brand h2 {
+    font-size: 1.2rem;
   }
 
   .navbar-links {
-    flex-direction: row;
-    gap: 0px;
+    gap: 10px;
   }
 
   .navbar-btn {
-    width: 100%;
-    padding: 3px 9px;
+    font-size: 14px;
+    padding: 8px 12px;
   }
 }
 
@@ -98,20 +103,19 @@ body {
 
 /* General button style */
 .button {
-  position: absolute;
-  right: 10%;
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative; /* Change from absolute */
+  width: auto; /* Remove fixed width */
+  min-width: 120px;
+  max-width: 200px;
+  margin: 10px auto;
+  padding: 10px 20px;
   font-size: 18px;
   font-weight: 300;
-  padding: 10px 10px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   text-align: center;
   transition: all 0.3s ease;
-  width: 150px; /* Set button width */
-  margin: 10px;
 }
 
 button:hover {
@@ -197,13 +201,14 @@ button:hover {
 
 /* Input Fields */
 .input-field {
-  padding: 14px 18px;
-  font-size: 1rem;
-  margin: 12px 0;
+  width: 100%;
+  max-width: 500px; /* Limit width on larger screens */
+  padding: 12px 16px;
+  font-size: clamp(14px, 2vw, 16px); /* Responsive font size */
+  margin: 10px auto;
   border-radius: 8px;
   transition: all 0.3s ease;
   outline: none;
-  width: 100%;
   background-color: #f9f9f9; 
   color: #333333; /* Dark text color */
 }
@@ -288,6 +293,9 @@ button:hover {
   flex-wrap: wrap;
   opacity: 0;
   animation: fadeInUp 1s forwards ease-out;
+  width: 100%;
+  max-width: 600px;
+  margin: 15px auto;
 }
 
 .measurement-card:hover {
@@ -360,6 +368,7 @@ button:hover {
   align-items: center;
   z-index: 1000; /* Make sure it's on top */
   transition: opacity 0.3s ease;
+  padding: 20px;
 }
 
 /* Success message box */
@@ -369,7 +378,8 @@ button:hover {
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-  width: 300px;
+  width: 90%;
+  max-width: 350px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -391,9 +401,11 @@ button:hover {
   padding: 10px;
   border-radius: 8px;
   text-align: center;
-  width: 100%;
+  width: 90%;
+  max-width: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
+  margin: 20px;
 }
 
 /* Modal Buttons */
@@ -471,7 +483,7 @@ button:hover {
 }
 
 .edit-button, .delete-button {
-  padding: 8px 15px;
+  padding: 8px 4px;
   border: none;
   border-radius: 4px;
   font-size: 14px;
@@ -661,5 +673,60 @@ label {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Grid Layout for Multiple Cards */
+.measurement-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 15px;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  line-height: 1.3;
+}
+
+p {
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.5;
+}
+
+/* Additional Mobile Optimizations */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .input-field {
+    padding: 10px 14px;
+  }
+
+  .button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .measurements-page {
+    padding: 15px;
+  }
+
+  .form-container {
+    padding: 15px;
+  }
+}
+
+/* Touch-friendly Interactions */
+@media (hover: none) {
+  .button:hover,
+  .navbar-btn:hover {
+    transform: none;
+  }
+
+  .input-field:focus {
+    transform: none;
   }
 }
