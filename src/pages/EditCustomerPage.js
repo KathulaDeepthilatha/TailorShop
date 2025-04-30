@@ -57,13 +57,6 @@ const EditCustomerPage = () => {
     { label: "Full Chest", key: "full_chest" },
     { label: "Waist", key: "waist" },
     { label: "Jacket", key: "jacket" },
-    { label: "Hips", key: "hips" },
-    { label: "Thigh", key: "thigh" },
-    { label: "Trouser Waist", key: "trouser_waist" },
-    { label: "Trouser Hips", key: "trouser_hips" },
-    { label: "Trouser Length", key: "trouser_length" },
-    { label: "Ankle", key: "ankle" },
-    { label: "Full Crotch", key: "full_crotch" },
   ];
 
   if (!formData) {

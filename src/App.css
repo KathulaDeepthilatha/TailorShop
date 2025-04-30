@@ -24,7 +24,6 @@ body {
 /* Main App Layout */
 .app {
   width: 100%;
-  max-width: 1200px; /* Add max-width for larger screens */
   padding: 0 15px; /* Add horizontal padding */
   height: 100%;
   margin: 0 auto;
@@ -37,8 +36,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  margin: 0 0 20px 0;
-  background: #F5F5DC;
+  margin: 20px 0;
   transition: all 0.3s ease;
   position: sticky; /* Make navbar sticky */
   top: 0;
@@ -555,6 +553,7 @@ button:hover {
 .customer-info {
   text-align: left;
   font-size: 16px;
+  text-align: center;
 }
 
 .customer-info p{

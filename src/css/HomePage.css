@@ -17,7 +17,7 @@
   font-size: 28px;
   font-weight: 500;
   /* text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); */
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 
@@ -29,8 +29,9 @@
   
     padding: 20px 20px;
     margin-top: 10px;
+    border: 2px solid black;
     border-radius: 12px;
-    background: black;
+    background-color: aliceblue;
     /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); */
     transition: all 0.3s ease;
   }
