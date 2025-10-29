@@ -111,6 +111,7 @@ const LoginPage = ({ onLogin }) => {
         ))}
       </div>
       <button onClick={handleLogin}>Login</button>
+      <div>Try with Guest PIN: 123456 </div>
     </div>
   );
 };
