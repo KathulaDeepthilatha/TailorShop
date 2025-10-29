@@ -95,6 +95,7 @@ const LoginPage = ({ onLogin }) => {
           }
         }}
       />
+           
       <div className="pin-input">
         {pin.map((digit, index) => (
           <input
@@ -109,9 +110,11 @@ const LoginPage = ({ onLogin }) => {
             className="pin-box"
           />
         ))}
+  
       </div>
       <button onClick={handleLogin}>Login</button>
       <div>Try with Guest PIN: 123456 </div>
+  
     </div>
   );
 };
